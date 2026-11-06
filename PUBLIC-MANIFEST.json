@@ -1,0 +1,174 @@
+{
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 145,
+      "sha256": "143cc0016bd900d7fce33456c8690874e140e49a4dab8326a1ec5645da3e0b75"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 110,
+      "sha256": "ddc789280f43b9ceea9a668208bfa77cb0e6ee134ad2467fcc42ed3e719be4fa"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1065,
+      "sha256": "99d90b955a6556fb3fb0e8ebde35f70292a20ad3078b9186ad0f3d19d7ef7f00"
+    },
+    {
+      "path": "MODEL-EVALUATION.json",
+      "bytes": 9109,
+      "sha256": "cea496b1ad33b8c8bb84b22ee4d30ee20d82fa2ceb100e996a210382289bed7a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10263,
+      "sha256": "f2277d53527ce1e9afb5cc5589c30f7f53d8ec60e095a0702e5b8a1c1fc2ac27"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 1724,
+      "sha256": "4cba365ba83c271afbca4273789038aa3f6ab8e978fd92104d77289f859d58fd"
+    },
+    {
+      "path": "docs/DEMO-SCRIPT.md",
+      "bytes": 4046,
+      "sha256": "9f77609e1fc81ffa974ae1f1576e193979a1664c01a47f2ddfd20a59fae46a8d"
+    },
+    {
+      "path": "docs/PAYPAL-SANDBOX.md",
+      "bytes": 5995,
+      "sha256": "accd0bb080d772871f82a250164f753178739dda34c3b848160e5de27a46eff8"
+    },
+    {
+      "path": "docs/images/review.png",
+      "bytes": 62902,
+      "sha256": "20eeaf7b0d4ee968067b8fdc5dd2a45747bda72e8bead3f659fe49d2d9887a9c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 500,
+      "sha256": "f44bdeadc328fb123269e90cfb253d8acfbdbfec4c77985ba54da1d1fcb20ba4"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 27520,
+      "sha256": "593ac812d2aeded95c5dbeea148c18606b0bb97fad48f2668d4631b5edbbf1e6"
+    },
+    {
+      "path": "package.json",
+      "bytes": 803,
+      "sha256": "36322f51f434af965a5f80dddc2f428627a3d51542f9882bc662c3ae992a2a4b"
+    },
+    {
+      "path": "playwright.config.js",
+      "bytes": 793,
+      "sha256": "42d20b3d69e5c82f1b95432ad12b272127c5c342b8e23d08a8dc65261cfb1133"
+    },
+    {
+      "path": "scripts/prepare-public.mjs",
+      "bytes": 5863,
+      "sha256": "a14d9cd16f8735493151d7b584a70555fb14a619392123311713da513d4970b8"
+    },
+    {
+      "path": "scripts/train.mjs",
+      "bytes": 2494,
+      "sha256": "00a00f81252da622cd807341b2155cb1865b316762585ad29d891c2bd0f0bed1"
+    },
+    {
+      "path": "server/app.mjs",
+      "bytes": 7479,
+      "sha256": "23b7949078ae3ea562ed82c80ece43fd6fe30a3d92b8c866f76437accfc27da5"
+    },
+    {
+      "path": "server/index.mjs",
+      "bytes": 1541,
+      "sha256": "7a34441b93c10da18e9981ea3e44e08156e8da9e52a4c41f2cd26a42fec5e52d"
+    },
+    {
+      "path": "server/paypal.mjs",
+      "bytes": 4792,
+      "sha256": "ec0307117abe79015636236da59571dab3053a7046b2ecb02802dc53daf12b31"
+    },
+    {
+      "path": "src/domain/review.mjs",
+      "bytes": 8973,
+      "sha256": "7fc0c991cc2c529ffc0459b69596d6a6de6ac9e0b0ff8abad6fc2f8868abd89a"
+    },
+    {
+      "path": "src/domain/sample.mjs",
+      "bytes": 780,
+      "sha256": "950aba5f67d6ee87eee2d050d392db7bc2c6c0b4707d790544845cc325428f96"
+    },
+    {
+      "path": "src/model/classifier.mjs",
+      "bytes": 2614,
+      "sha256": "5d3d4f1b8588638b1a190aed1966c479f476b947af0a432a2a2ac8c61402a442"
+    },
+    {
+      "path": "src/model/model.json",
+      "bytes": 82819,
+      "sha256": "557890bc7f679f350f1a0df39d78252a13ea55964744b0fb7484412dab1c5f28"
+    },
+    {
+      "path": "src/model/training.mjs",
+      "bytes": 10069,
+      "sha256": "01b2404523ec11878a2df85dddfbabe9a4e3f1d241683112df7ea629458e7911"
+    },
+    {
+      "path": "src/ui/main.js",
+      "bytes": 19500,
+      "sha256": "c38f0f36974756501cd2b3eb3b3aee07f3166fc7b90e3ee5824f7cd1f1d79833"
+    },
+    {
+      "path": "src/ui/readability.css",
+      "bytes": 3059,
+      "sha256": "2c7978cd191ee0ef591eba511b74f831ada91d55dae36124434ad85c55cbaca8"
+    },
+    {
+      "path": "src/ui/style.css",
+      "bytes": 15204,
+      "sha256": "08807790f112476e14fecf2d9a2be6ab2cd6c873a211b556ce9f5b577d9f6655"
+    },
+    {
+      "path": "test/paypal.test.mjs",
+      "bytes": 7273,
+      "sha256": "6336b5808fc728619563f68ac1f3e53522a2af431c540bb835e287395d99aa30"
+    },
+    {
+      "path": "test/publication.test.mjs",
+      "bytes": 1804,
+      "sha256": "274cfa6996d591d3a51bf2f8168f72fe2bd3530f15a0274d7bc64a23f0c17e6b"
+    },
+    {
+      "path": "test/review.test.mjs",
+      "bytes": 9519,
+      "sha256": "21903bcedf05d1c680c1e703c9353481929ca5baf87b3a428962aa5d468c4b4e"
+    },
+    {
+      "path": "test/sandbox-harness.mjs",
+      "bytes": 1836,
+      "sha256": "3e8171cc83f83c8834136d63c75c5c9f3aab757bf30b6cdad3eb7877909d6d52"
+    },
+    {
+      "path": "test/server.test.mjs",
+      "bytes": 8213,
+      "sha256": "7db5ac0f33a2bd5234e03f4954df639040e35b6104b4e267176c3ba02544c311"
+    },
+    {
+      "path": "test/ui/review.spec.js",
+      "bytes": 6625,
+      "sha256": "cbdde87434a2c5a0e401a7284fd55966107a554d5f526a6f7063f7df92925a1d"
+    },
+    {
+      "path": "test/ui/sandbox.spec.js",
+      "bytes": 5202,
+      "sha256": "1ce11eaebacd05fa77993b94d5b15a448c30cc4e3ef54a96b47c3de196ff707f"
+    },
+    {
+      "path": "vite.config.js",
+      "bytes": 129,
+      "sha256": "bf221f10ed4cdb7bf04cc8e1d317c9be6ffa3dbbc47b6da9be4b747563d758b4"
+    }
+  ]
+}

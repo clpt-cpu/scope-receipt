@@ -1,0 +1,314 @@
+{
+  "modelVersion": 1,
+  "source": "authored synthetic English examples",
+  "trainingExamples": 81,
+  "evaluationExamples": 12,
+  "correct": 12,
+  "abstained": 0,
+  "limitation": "Small synthetic English holdout. These results do not establish accuracy on client records or billing suitability.",
+  "results": [
+    {
+      "text": "Customer added a separate set of packaging layouts beyond the quote.",
+      "expected": "extra",
+      "prediction": "extra"
+    },
+    {
+      "text": "An extra page has been requested at a separately agreed price.",
+      "expected": "extra",
+      "prediction": "extra"
+    },
+    {
+      "text": "The newly added print format needs an additional fee.",
+      "expected": "extra",
+      "prediction": "extra"
+    },
+    {
+      "text": "Two additional revisions outside the initial contract need pricing.",
+      "expected": "extra",
+      "prediction": "extra"
+    },
+    {
+      "text": "This fix was covered by the originally agreed deliverables.",
+      "expected": "included",
+      "prediction": "included"
+    },
+    {
+      "text": "The requested revision is included at no additional charge.",
+      "expected": "included",
+      "prediction": "included"
+    },
+    {
+      "text": "Finished the original poster work from our agreement.",
+      "expected": "included",
+      "prediction": "included"
+    },
+    {
+      "text": "There is no extra fee for the spelling correction.",
+      "expected": "included",
+      "prediction": "included"
+    },
+    {
+      "text": "Sent a follow-up to confirm when the review call will happen.",
+      "expected": "admin",
+      "prediction": "admin"
+    },
+    {
+      "text": "Still waiting for feedback on the preview.",
+      "expected": "admin",
+      "prediction": "admin"
+    },
+    {
+      "text": "Rescheduled the progress meeting for Friday.",
+      "expected": "admin",
+      "prediction": "admin"
+    },
+    {
+      "text": "Emailed the delivery link and a status update.",
+      "expected": "admin",
+      "prediction": "admin"
+    }
+  ],
+  "challenge": {
+    "examples": 21,
+    "correct": 21,
+    "abstained": 0,
+    "wrongBillable": 0,
+    "limitation": "Written after the first model failed them and used to choose new training examples, so this is a regression list, not a blind test.",
+    "results": [
+      {
+        "text": "Can you also do a flyer version of the poster?",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Client wants a third revision round, which the quote does not cover.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "They asked for a Spanish version of the menu as well.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "New request: redesign the loyalty card, not in the original scope.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Client asked us to redo the brochure from scratch.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Added two more social media banners at their request.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Please add a matching business card design.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Client would like the poster in A3 too.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "No charge for the small logo tweak.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "Free of charge: moved the logo a little.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "Fixed a typo on the menu board, covered by the quote.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "The first revision round is included in the agreed price.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "Finished the two menu boards as quoted.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "We will not charge extra for the color fix.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "This small change is included, no extra charge.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "Client approved the final menu.",
+        "expected": "admin",
+        "prediction": "admin"
+      },
+      {
+        "text": "Called the client to confirm the delivery address.",
+        "expected": "admin",
+        "prediction": "admin"
+      },
+      {
+        "text": "Emailed the printer about paper stock.",
+        "expected": "admin",
+        "prediction": "admin"
+      },
+      {
+        "text": "Meeting moved to Friday afternoon.",
+        "expected": "admin",
+        "prediction": "admin"
+      },
+      {
+        "text": "Client paid the deposit.",
+        "expected": "admin",
+        "prediction": "admin"
+      },
+      {
+        "text": "Waiting for feedback on the draft.",
+        "expected": "admin",
+        "prediction": "admin"
+      }
+    ]
+  },
+  "fresh": {
+    "examples": 24,
+    "correct": 18,
+    "abstained": 8,
+    "wrongBillable": 0,
+    "limitation": "Written by the same author after the model was frozen. Small and synthetic, so it is a sanity check, not an accuracy figure.",
+    "results": [
+      {
+        "text": "Client wants an Instagram story version of the sale graphic.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "They would like us to add a QR code page to the booklet.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "The owner asked for a second storefront decal after the quote was signed.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Please also make a vertical cut of the promo video.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Beyond the agreed work, they now want a price list insert.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Could you add a Korean subtitle track as well?",
+        "expected": "extra",
+        "prediction": "uncertain"
+      },
+      {
+        "text": "A further round of edits was requested, outside what we quoted.",
+        "expected": "extra",
+        "prediction": "extra"
+      },
+      {
+        "text": "Client ordered thank-you cards to go with the menus.",
+        "expected": "extra",
+        "prediction": "uncertain"
+      },
+      {
+        "text": "Resized the header image, covered under the agreed revisions.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "No extra cost for fixing the broken link.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "We did not bill the five minute crop.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "Swapped the phone number on the flyer at no charge.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "That change is part of the deal, nothing to add.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "Delivered the two boards exactly as quoted.",
+        "expected": "included",
+        "prediction": "included"
+      },
+      {
+        "text": "Client said they will look at the proof on Monday.",
+        "expected": "admin",
+        "prediction": "uncertain"
+      },
+      {
+        "text": "Left a voicemail about the invoice date.",
+        "expected": "admin",
+        "prediction": "admin"
+      },
+      {
+        "text": "Sent the signed quote to the bookkeeper.",
+        "expected": "admin",
+        "prediction": "admin"
+      },
+      {
+        "text": "Sent over the final files and asked for a receipt.",
+        "expected": "admin",
+        "prediction": "admin"
+      },
+      {
+        "text": "Reminded the client that the review is tomorrow.",
+        "expected": "admin",
+        "prediction": "uncertain"
+      },
+      {
+        "text": "Client thanked us for the update.",
+        "expected": "admin",
+        "prediction": "uncertain"
+      },
+      {
+        "text": "Something feels off with the spacing.",
+        "expected": "uncertain",
+        "prediction": "included"
+      },
+      {
+        "text": "Can it look more premium?",
+        "expected": "uncertain",
+        "prediction": "uncertain"
+      },
+      {
+        "text": "They might want more later.",
+        "expected": "uncertain",
+        "prediction": "uncertain"
+      },
+      {
+        "text": "Hmm, the client mentioned the sign again.",
+        "expected": "uncertain",
+        "prediction": "uncertain"
+      }
+    ]
+  }
+}

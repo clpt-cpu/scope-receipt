@@ -1,0 +1,50 @@
+/* The paper palette uses darker working text than the decorative receipt. */
+.project-bar { position: relative; padding-right: 110px; }
+.edit-project-button { position: absolute; right: 0; top: 42px; }
+.project-editor { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.project-editor form { display: grid; grid-template-columns: 1.3fr .65fr 1.7fr auto; gap: 17px; align-items: end; }
+.project-editor label { display: flex; flex-direction: column; gap: 7px; font-size: 11px; color: #806a4d; }
+.project-editor input { min-width: 0; border: 1px solid #cdb99b; padding: 9px; background: #fffbf2; color: #6c5233; border-radius: 0; font-size: 12px; }
+.intro, .pane-intro { font-size: 12px; color: #7c694f; }
+.project-bar p, .grid-help, .field-help { font-size: 11px; color: #7d6c50; }
+.tiny-label, .mono, .project-details { color: #806a4d; }
+.notes-pane textarea { font-size: 12px; color: #6b573f; }
+.work-text { font-size: 12px; color: #5e4e3a; }
+.work-cell small { color: #897455; font-size: 9px; }
+.ag-cell { font-size: 11px; color: #725a3e; }
+.ag-header-cell-text { font-size: 10px; }
+.ag-cell.amount-cell { font-size: 11px; }
+.category-badge { font-size: 10px; }
+.category-badge.extra { color: #8b492b; }
+.category-badge.included { color: #556137; }
+.category-badge.admin { color: #6e624e; }
+.category-badge.uncertain { color: #805331; }
+.category-filters button { font-size: 11px; color: #856c4d; }
+.category-filters button[aria-pressed=true] { color: #6c4a2b; }
+.text-button { font-size: 11px; min-height: 28px; display: inline-flex; align-items: center; }
+.model-note summary { font-size: 10px; color: #80684a; }
+.model-note p { font-size: 11px; color: #80684a; }
+.source-inspector blockquote { color: #7c5b34; font-size: 17px; }
+.source-details, .source-details .mono { font-size: 10px; color: #846b48; }
+.source-caution { font-size: 11px; color: #8f5d32; }
+.review-bottom>span, .review-bottom small, .review-bottom>div>span { color: #8c6e45; }
+.draft-heading p, .draft-options>label:first-child, .review-confirm { font-size: 11px; color: #7a6140; }
+.preview-line { font-size: 13px; color: #79562e; }
+.preview-line small, .invoice-preview-heading p:last-child { font-size: 11px; color: #8a6840; }
+.sandbox-status, .preview-limits { color: #87643b; }
+.sandbox-status.caution { color: #9a3412; font-weight: 600; }
+footer { color: #8a704d; }
+@media (max-width: 680px) {
+  .project-bar { padding-right: 0; padding-bottom: 49px; }
+  .edit-project-button { top: auto; bottom: 11px; right: auto; left: 0; }
+  .project-editor form { grid-template-columns: 1fr; gap: 14px; }
+  .eyebrow, .tiny-label { font-size: 9px; }
+  .intro { font-size: 12px; }
+  .project-bar p, .pane-intro, .field-help, .grid-help { font-size: 11px; }
+  .notes-pane textarea { font-size: 12px; }
+  .category-filters { gap: 14px; }
+  .category-filters button, .review-toolbar>.text-button { font-size: 10px; }
+  .source-inspector blockquote { font-size: 17px; }
+  .source-details, .source-details .mono { font-size: 10px; }
+  .review-confirm, .draft-heading p { font-size: 11px; }
+}
