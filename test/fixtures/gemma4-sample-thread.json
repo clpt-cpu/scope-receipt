@@ -1,0 +1,87 @@
+{
+  "model": "gemma4:12b-it-qat",
+  "recorded": "2026-11-07, local Ollama 0.40.11, temperature 0, think false",
+  "items": [
+    {
+      "note": 1,
+      "category": "included",
+      "evidence": "two agreed menu boards",
+      "description": "Menu boards",
+      "quantity": 2,
+      "unit_price": "",
+      "reason": "The agreed scope includes two menu boards."
+    },
+    {
+      "note": 2,
+      "category": "extra",
+      "evidence": "2 poster layouts for the front window",
+      "description": "Poster layout",
+      "quantity": 2,
+      "unit_price": "45",
+      "reason": "Poster layouts are not included in the agreed scope."
+    },
+    {
+      "note": 3,
+      "category": "admin",
+      "evidence": "Sent the preview link and booked a review call",
+      "description": "Status update and scheduling",
+      "quantity": 1,
+      "unit_price": "",
+      "reason": "Administrative tasks are not billable."
+    },
+    {
+      "note": 4,
+      "category": "extra",
+      "evidence": "sidewalk sign",
+      "description": "Sidewalk sign",
+      "quantity": 1,
+      "unit_price": "80",
+      "reason": "Sidewalk signs are not included in the agreed scope."
+    },
+    {
+      "note": 4,
+      "category": "included",
+      "evidence": "fix the typo in the menu board heading",
+      "description": "Typo correction",
+      "quantity": 1,
+      "unit_price": "",
+      "reason": "The agreed scope includes one revision round."
+    },
+    {
+      "note": 5,
+      "category": "included",
+      "evidence": "Fixed the heading typo",
+      "description": "Typo correction",
+      "quantity": 1,
+      "unit_price": "",
+      "reason": "The agreed scope includes one revision round."
+    },
+    {
+      "note": 6,
+      "category": "admin",
+      "evidence": "Waiting for the client to confirm print sizes",
+      "description": "Waiting for client info",
+      "quantity": 1,
+      "unit_price": "",
+      "reason": "Waiting for information is not billable."
+    },
+    {
+      "note": 7,
+      "category": "included",
+      "evidence": "logo feel a little less busy",
+      "description": "Logo revision",
+      "quantity": 1,
+      "unit_price": "",
+      "reason": "The agreed scope includes one revision round."
+    },
+    {
+      "note": 8,
+      "category": "extra",
+      "evidence": "menu in Spanish, French and Korean",
+      "description": "Menu translation",
+      "quantity": 3,
+      "unit_price": "30",
+      "reason": "Additional languages are not included in the agreed scope."
+    }
+  ]
+}

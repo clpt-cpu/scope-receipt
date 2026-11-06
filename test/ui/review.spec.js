@@ -47,7 +47,7 @@ test('project details reach the payload and editing a quantity invalidates revie
   await page.locator('#review-confirm').check();
   const row = page.getByRole('row').filter({ has: page.getByRole('gridcell', { name: 'Client requested 2 additional poster layouts outside the quote, at $45 each. N-02', exact: true }) });
   await row.getByRole('gridcell', { name: '2', exact: true }).dblclick();
-  await row.getByRole('textbox').fill('3'); await row.getByRole('textbox').press('Enter');
+  await row.getByRole('spinbutton').fill('3'); await row.getByRole('spinbutton').press('Enter');
   await expect(page.locator('#selected-total')).toHaveText('$305.00'); await expect(page.locator('#review-confirm')).not.toBeChecked();
   await page.locator('#review-confirm').check(); await page.getByRole('button', { name: /Review invoice draft/ }).click();
   await expect(page.locator('#preview-meta')).toContainText('Q-020'); await expect(page.locator('#preview-total')).toHaveText('USD 305.00');

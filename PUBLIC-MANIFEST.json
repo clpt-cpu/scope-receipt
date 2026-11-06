@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "bytes": 145,
-      "sha256": "143cc0016bd900d7fce33456c8690874e140e49a4dab8326a1ec5645da3e0b75"
+      "bytes": 292,
+      "sha256": "f7bc24b7e9ea5369094ff52f652c96ceed697ae02a1d4b7989cc7466de1334b4"
     },
     {
       "path": ".gitignore",
@@ -22,8 +22,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10263,
-      "sha256": "f2277d53527ce1e9afb5cc5589c30f7f53d8ec60e095a0702e5b8a1c1fc2ac27"
+      "bytes": 14631,
+      "sha256": "bb1c0bc59fa9149724afaed8141cd1550bdb28fde777515af2e2c78d1086756f"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",
@@ -32,18 +32,18 @@
     },
     {
       "path": "docs/DEMO-SCRIPT.md",
-      "bytes": 4046,
-      "sha256": "9f77609e1fc81ffa974ae1f1576e193979a1664c01a47f2ddfd20a59fae46a8d"
+      "bytes": 4002,
+      "sha256": "f398331045adb127d266d5831efe041d6daea73b6f1ff0765c78acfa0de297dc"
     },
     {
       "path": "docs/PAYPAL-SANDBOX.md",
-      "bytes": 5995,
-      "sha256": "accd0bb080d772871f82a250164f753178739dda34c3b848160e5de27a46eff8"
+      "bytes": 6612,
+      "sha256": "44ace2914e0ade1e94c8c1252e6efe1f7cd17fa92bb72b109a34c52fcf530330"
     },
     {
       "path": "docs/images/review.png",
-      "bytes": 62902,
-      "sha256": "20eeaf7b0d4ee968067b8fdc5dd2a45747bda72e8bead3f659fe49d2d9887a9c"
+      "bytes": 43135,
+      "sha256": "683233f281769dad816b7b89259d1f38f2c7eb4935a0060535036b011e919655"
     },
     {
       "path": "index.html",
@@ -57,18 +57,18 @@
     },
     {
       "path": "package.json",
-      "bytes": 803,
-      "sha256": "36322f51f434af965a5f80dddc2f428627a3d51542f9882bc662c3ae992a2a4b"
+      "bytes": 881,
+      "sha256": "dabb45988cfac5f808c0d2bf7dc46079a2e3046d51d683b6316c0874dc923cb8"
     },
     {
       "path": "playwright.config.js",
-      "bytes": 793,
-      "sha256": "42d20b3d69e5c82f1b95432ad12b272127c5c342b8e23d08a8dc65261cfb1133"
+      "bytes": 926,
+      "sha256": "5fb299be23f2a573a137887ff5f85ed32242c54d8d7ce2ccacf7892efffc1e21"
     },
     {
       "path": "scripts/prepare-public.mjs",
-      "bytes": 5863,
-      "sha256": "a14d9cd16f8735493151d7b584a70555fb14a619392123311713da513d4970b8"
+      "bytes": 5948,
+      "sha256": "ba9e1864aff6181af82f3112386d335194c9466e5e3a38d3ae221728c4ff48a7"
     },
     {
       "path": "scripts/train.mjs",
@@ -76,29 +76,39 @@
       "sha256": "00a00f81252da622cd807341b2155cb1865b316762585ad29d891c2bd0f0bed1"
     },
     {
+      "path": "server/agent.mjs",
+      "bytes": 5081,
+      "sha256": "d98a802e42f96156aa8fd732d0c87e4c61eaa6c4db9301bdffb3044d8ef12a42"
+    },
+    {
       "path": "server/app.mjs",
-      "bytes": 7479,
-      "sha256": "23b7949078ae3ea562ed82c80ece43fd6fe30a3d92b8c866f76437accfc27da5"
+      "bytes": 9600,
+      "sha256": "2eed3e3c1ea95db5f2ef97fc6beb02ec74778c6f605f85e5f4abd6df976314e2"
     },
     {
       "path": "server/index.mjs",
-      "bytes": 1541,
-      "sha256": "7a34441b93c10da18e9981ea3e44e08156e8da9e52a4c41f2cd26a42fec5e52d"
+      "bytes": 1924,
+      "sha256": "6bc1fc35a44b05dbcf0a1106e75c11f8841bd43679b7364076509c32c406a5ec"
     },
     {
       "path": "server/paypal.mjs",
-      "bytes": 4792,
-      "sha256": "ec0307117abe79015636236da59571dab3053a7046b2ecb02802dc53daf12b31"
+      "bytes": 6506,
+      "sha256": "fad7b705aba6ba90839ed167003f223099d1095eb419ac55bfe5cfc628e9f92a"
+    },
+    {
+      "path": "src/domain/agent-review.mjs",
+      "bytes": 6898,
+      "sha256": "ca9ea9496d512fc05c4b4346aab81ebec00aa8936892080bbfc9553b7f084fef"
     },
     {
       "path": "src/domain/review.mjs",
-      "bytes": 8973,
-      "sha256": "7fc0c991cc2c529ffc0459b69596d6a6de6ac9e0b0ff8abad6fc2f8868abd89a"
+      "bytes": 11326,
+      "sha256": "b58e2d0495e293469a97833c1e7871daaeaf7a73f1bedc7ecad0000ec1a56101"
     },
     {
       "path": "src/domain/sample.mjs",
-      "bytes": 780,
-      "sha256": "950aba5f67d6ee87eee2d050d392db7bc2c6c0b4707d790544845cc325428f96"
+      "bytes": 1579,
+      "sha256": "c514097734ea4d0583fc592ca6797d81115cdcfb7094bf5c4c290c9968eb6272"
     },
     {
       "path": "src/model/classifier.mjs",
@@ -116,9 +126,14 @@
       "sha256": "01b2404523ec11878a2df85dddfbabe9a4e3f1d241683112df7ea629458e7911"
     },
     {
+      "path": "src/ui/agent.css",
+      "bytes": 3138,
+      "sha256": "4706215be02f694fe9cef8f1d7e4cdeeb444e881018dee1325c23e739eb6eca1"
+    },
+    {
       "path": "src/ui/main.js",
-      "bytes": 19500,
-      "sha256": "c38f0f36974756501cd2b3eb3b3aee07f3166fc7b90e3ee5824f7cd1f1d79833"
+      "bytes": 29550,
+      "sha256": "b57f08bbd6e2aeb99b22d7e63d32d295fdb5447c176ec5f88b04ffe94cbbe20d"
     },
     {
       "path": "src/ui/readability.css",
@@ -131,6 +146,21 @@
       "sha256": "08807790f112476e14fecf2d9a2be6ab2cd6c873a211b556ce9f5b577d9f6655"
     },
     {
+      "path": "test/agent-harness.mjs",
+      "bytes": 1030,
+      "sha256": "7e533605b706d6c87f76450abacac283a5cfde6a3b9ea47b2d5b85f21db9d2e7"
+    },
+    {
+      "path": "test/agent.test.mjs",
+      "bytes": 11458,
+      "sha256": "ba473edb33e9727c882bccd815dda09562173d0f36c58015e88a33773ba42bdb"
+    },
+    {
+      "path": "test/fixtures/gemma4-sample-thread.json",
+      "bytes": 2509,
+      "sha256": "bd1632fdef6a032395f3765d53c4e97df978d3d0110b407176f85eef06ef71ce"
+    },
+    {
       "path": "test/paypal.test.mjs",
       "bytes": 7273,
       "sha256": "6336b5808fc728619563f68ac1f3e53522a2af431c540bb835e287395d99aa30"
@@ -141,14 +171,19 @@
       "sha256": "274cfa6996d591d3a51bf2f8168f72fe2bd3530f15a0274d7bc64a23f0c17e6b"
     },
     {
+      "path": "test/readback.test.mjs",
+      "bytes": 5572,
+      "sha256": "89d8ea71d64f88032b0f013c2fd1e29b7bcbf07cb726e7c5630f6a528dc7dab6"
+    },
+    {
       "path": "test/review.test.mjs",
       "bytes": 9519,
       "sha256": "21903bcedf05d1c680c1e703c9353481929ca5baf87b3a428962aa5d468c4b4e"
     },
     {
       "path": "test/sandbox-harness.mjs",
-      "bytes": 1836,
-      "sha256": "3e8171cc83f83c8834136d63c75c5c9f3aab757bf30b6cdad3eb7877909d6d52"
+      "bytes": 2418,
+      "sha256": "5adcc0dd6d19653935a4c1d9fabe4f8f3f875c198ce8152a446cfb8e1db25ec3"
     },
     {
       "path": "test/server.test.mjs",
@@ -156,14 +191,19 @@
       "sha256": "7db5ac0f33a2bd5234e03f4954df639040e35b6104b4e267176c3ba02544c311"
     },
     {
+      "path": "test/ui/agent.spec.js",
+      "bytes": 3980,
+      "sha256": "1b84b3334eb6a04b042f0acac9c378ecbcd2dd2a1b7113d32a03f2f63c54c260"
+    },
+    {
       "path": "test/ui/review.spec.js",
-      "bytes": 6625,
-      "sha256": "cbdde87434a2c5a0e401a7284fd55966107a554d5f526a6f7063f7df92925a1d"
+      "bytes": 6631,
+      "sha256": "b750ada3fead1de1186923ff74d3392e3ac747a7dcea9c517399114bfd47d5cb"
     },
     {
       "path": "test/ui/sandbox.spec.js",
-      "bytes": 5202,
-      "sha256": "1ce11eaebacd05fa77993b94d5b15a448c30cc4e3ef54a96b47c3de196ff707f"
+      "bytes": 5496,
+      "sha256": "cf9cf70e79f0356096336cc4fe868c7ca31f83a11f1670ae73d5811a90764753"
     },
     {
       "path": "vite.config.js",

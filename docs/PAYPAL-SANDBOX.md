@@ -1,6 +1,6 @@
 # Test a PayPal sandbox draft
 
-First real sandbox check (2026-11-07, JST): with a newly created sandbox app, one **Create sandbox draft** returned an invoice ID in status DRAFT. Reading that invoice back from the sandbox Invoicing API showed USD, three lines (2 × 45.00, 1 × 80.00, 3 × 30.00) and a total of USD 260.00, and the Developer Dashboard's API Calls list showed one successful `POST /v2/invoicing/invoices` (201). Timeout and retry behavior against the real service has not been exercised. Automated tests simulate PayPal's responses, including those failure paths. Follow this guide to repeat the check with your own sandbox. The app only creates sandbox drafts; it cannot send an invoice or collect a payment.
+First real sandbox check (2026-11-07, JST): with a newly created sandbox app, one **Create sandbox draft** returned an invoice ID in status DRAFT. Reading that invoice back from the sandbox Invoicing API showed USD, three lines (2 × 45.00, 1 × 80.00, 3 × 30.00) and a total of USD 260.00, and the Developer Dashboard's API Calls list showed one successful `POST /v2/invoicing/invoices` (201). Second real check (2026-11-07, JST), with the AI reader: the local model read the sample client messages, the operator entered the sign's price, and **Create sandbox draft** returned a new DRAFT. The application then read it back with `GET /v2/invoicing/invoices/{id}` and showed all three lines matching (2 × 45.00, 1 × 80.00, 3 × 30.00), status DRAFT and USD 260.00. Timeout and retry behavior against the real service has not been exercised. Automated tests simulate PayPal's responses, including those failure paths. Follow this guide to repeat the check with your own sandbox. The app only creates sandbox drafts; it cannot send an invoice or collect a payment.
 
 ## Get sandbox access
 
@@ -19,13 +19,13 @@ npm run build
 npm run start:sandbox
 ```
 
-The startup output must say `PayPal sandbox drafts: enabled by environment`. Open `http://127.0.0.1:4318`. `npm start` does not load `.env`; use `start:sandbox` for that file. Stop an earlier instance with Ctrl+C in its own terminal before starting another one. If the port is occupied by an unrelated process, do not stop it; set `SCOPE_RECEIPT_PORT` to a free local port instead.
+The startup output must say `PayPal sandbox drafts: enabled by environment`. Open `http://127.0.0.1:4318`. `npm start` does not load `.env`; use `start:sandbox` for that file, or `npm run start:agent` to load it together with the AI reader (see the README). Stop an earlier instance with Ctrl+C in its own terminal before starting another one. If the port is occupied by an unrelated process, do not stop it; set `SCOPE_RECEIPT_PORT` to a free local port instead.
 
 ## Make and inspect one draft
 
 1. Restore the fictional sample if needed. Choose **Select extra requests**. Check the three selected lines: 2 × USD 45.00, 1 × USD 80.00 and 3 × USD 30.00, total USD 260.00.
 2. Read the original notes and confirm the review checkbox. Choose **Review invoice draft**, then **Create sandbox draft** once.
-3. A usable result has a PayPal invoice ID and status DRAFT. The app compares USD 260.00 if PayPal returns a total. A missing or different total requires a check on PayPal's side.
+3. A usable result has a PayPal invoice ID and status DRAFT. The app compares USD 260.00 if PayPal returns a total, then reads the draft back from PayPal and lists each line with a check mark when PayPal's name, quantity and unit price match the review. A missing or different total, or a line marked **!**, requires a check on PayPal's side.
 4. In the Developer Dashboard, use **Testing Tools > Sandbox Accounts** and the relevant Business account's **View/Edit Account** to obtain its sandbox-site login. Sign into [the sandbox test site](https://www.sandbox.paypal.com/) with that generated test account, not your real PayPal credentials. Find its invoice area and the same invoice ID. The exact invoice menu label has not been verified.
 5. Confirm DRAFT, the three quantities/prices, USD currency and USD 260.00. Do not send the draft. There is no recipient in the current payload.
 

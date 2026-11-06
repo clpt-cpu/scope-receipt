@@ -2,7 +2,8 @@ import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { resolve, relative, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { analyzeNotes, buildReviewedInvoice, moneyToCents, receiptMarkdown } from '../src/domain/review.mjs';
+import { analyzeNotes, buildReviewedInvoice, compareReadback, moneyToCents, noteLines, receiptMarkdown } from '../src/domain/review.mjs';
+import { reconcileAgentItems } from '../src/domain/agent-review.mjs';
 import { sampleProject } from '../src/domain/sample.mjs';
 
 const DIST = fileURLToPath(new URL('../dist/', import.meta.url));
@@ -30,8 +31,9 @@ function permittedOrigin(req, required = false) {
   return (!origin && !required) || [`http://127.0.0.1:${port}`, `http://localhost:${port}`].includes(origin);
 }
 
-export function createApp({ model, paypalClient = null, allowSandbox = false, devMiddleware = null, now = () => Date.now(), log = console.error }) {
+export function createApp({ model, paypalClient = null, allowSandbox = false, agent = null, devMiddleware = null, now = () => Date.now(), log = console.error }) {
   const previews = new Map();
+  let agentBusy = false;
   return async (req, res) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Referrer-Policy', 'no-referrer');
@@ -41,13 +43,28 @@ export function createApp({ model, paypalClient = null, allowSandbox = false, de
       if (!permittedOrigin(req)) return json(res, 403, { error: 'Use the application from its own local origin.' });
       if (req.method === 'GET' && url.pathname === '/api/health') return json(res, 200, { ok: true, application: 'scope-receipt' });
       if (req.method === 'GET' && url.pathname === '/api/sample') return json(res, 200, sampleProject);
-      if (req.method === 'GET' && url.pathname === '/api/status') return json(res, 200, { environment: 'sandbox', configured: Boolean(paypalClient), draftCreationEnabled: Boolean(paypalClient && allowSandbox), model: { method: model.method, trainingExamples: Object.values(model.documentCounts).reduce((a, b) => a + b, 0), data: model.provenance, realClientAccuracy: 'not measured' } });
+      if (req.method === 'GET' && url.pathname === '/api/status') return json(res, 200, { environment: 'sandbox', configured: Boolean(paypalClient), draftCreationEnabled: Boolean(paypalClient && allowSandbox), model: { method: model.method, trainingExamples: Object.values(model.documentCounts).reduce((a, b) => a + b, 0), data: model.provenance, realClientAccuracy: 'not measured' }, agent: agent ? { enabled: true, label: agent.label(), ready: await agent.available() } : { enabled: false } });
       if (req.method !== 'POST') return json(res, 404, { error: 'Endpoint not found.' });
       let body;
       try { body = await readJson(req); } catch (error) { return json(res, 400, { error: error.message }); }
       if (url.pathname === '/api/analyze') {
         try { return json(res, 200, { rows: analyzeNotes(model, body.notes) }); }
         catch (error) { return json(res, 400, { error: error.message }); }
+      }
+      if (url.pathname === '/api/agent-read') {
+        if (!agent) return json(res, 409, { error: 'The AI reader is not enabled. Start the app with npm run start:agent, or use the built-in classifier.' });
+        if (agentBusy) return json(res, 429, { error: 'The AI reader is still reading the previous notes.' });
+        let lines;
+        try { lines = noteLines(body.notes); } catch (error) { return json(res, 400, { error: error.message }); }
+        const field = value => typeof value === 'string' ? value.slice(0, 400) : '';
+        agentBusy = true;
+        const started = now();
+        try {
+          const items = await agent.read({ projectName: field(body.projectName), quote: field(body.quote), scope: field(body.scope), lines });
+          const { rows, ignored, duplicates } = reconcileAgentItems(model, body.notes, items);
+          return json(res, 200, { rows, ignored, duplicates, reader: agent.label(), seconds: Number(((now() - started) / 1000).toFixed(1)) });
+        } catch (error) { log(error.message); return json(res, 502, { error: error.message }); }
+        finally { agentBusy = false; }
       }
       if (url.pathname === '/api/preview') {
         for (const [id, item] of previews) if (item.expiresAt <= now()) previews.delete(id);
@@ -75,6 +92,14 @@ export function createApp({ model, paypalClient = null, allowSandbox = false, de
           item.state = 'needs-checking';
           return json(res, 502, { error: 'The sandbox draft could not be confirmed. Check the sandbox dashboard. This preview is locked to prevent a duplicate.' });
         }
+      }
+      if (url.pathname === '/api/sandbox-readback') {
+        if (!paypalClient) return json(res, 409, { error: 'PayPal sandbox is not connected.' });
+        if (!permittedOrigin(req, true)) return json(res, 403, { error: 'Readback must be requested from the local application.' });
+        const item = previews.get(body.previewId);
+        if (!item || item.state !== 'created' || !item.receipt?.id) return json(res, 409, { error: 'Create the sandbox draft for this preview before reading it back.' });
+        try { return json(res, 200, compareReadback(item.review, item.receipt.id, await paypalClient.getInvoice(item.receipt.id))); }
+        catch (error) { log(error.message); return json(res, 502, { error: error.message }); }
       }
       return json(res, 404, { error: 'Endpoint not found.' });
     }

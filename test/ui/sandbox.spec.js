@@ -18,6 +18,9 @@ test('the reviewed draft reaches PayPal once, exactly as shown, and the button c
   await page.getByRole('button', { name: 'Create sandbox draft' }).click();
   await expect(page.locator('#sandbox-status')).toHaveText('Sandbox draft INV2-FAKE-0001 created. PayPal\'s total, USD 260.00, matches this review. Its status is DRAFT. No invoice was sent.');
   await expect(page.locator('#sandbox-draft')).toBeDisabled();
+  await expect(page.locator('#sandbox-readback')).toContainText('All 3 lines match the review');
+  await expect(page.locator('#sandbox-readback')).toContainText('INV2-FAKE-0001 · status DRAFT · USD 260.00');
+  await expect(page.locator('#sandbox-readback .readback-line.ok')).toHaveCount(3);
   const [call, ...others] = await received(request);
   expect(others).toEqual([]);
   expect(call.url).toBe('https://api-m.sandbox.paypal.com/v2/invoicing/invoices');

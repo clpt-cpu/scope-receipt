@@ -11,4 +11,15 @@ export const sampleProject = {
     'Please make the logo feel less busy.',
     'Client requested 3 more language variants outside the quote, at $30 each.',
   ].join('\n'),
+  // The same project as client messages, the way they usually arrive. Used with the AI reader.
+  thread: [
+    'Delivered the two agreed menu boards from quote Q-019.',
+    'Client (Mon): These look great! Could you also do 2 poster layouts for the front window? $45 each is fine.',
+    'Sent the preview link and booked a review call for Thursday.',
+    'Client (Thu): One more thing, we need a sidewalk sign too, and please fix the typo in the menu board heading. Our budget for the sign is $80.',
+    'Fixed the heading typo on the agreed menu board. Included revision.',
+    'Waiting for the client to confirm print sizes.',
+    'Client: Can the logo feel a little less busy?',
+    'Client (Fri): Could we get the menu in Spanish, French and Korean as well? $30 per language.',
+  ].join('\n'),
 };

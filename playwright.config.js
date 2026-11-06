@@ -6,5 +6,6 @@ export default defineConfig({
   webServer: [
     { command: 'npm run build && npm start', url: 'http://127.0.0.1:4318/api/health', reuseExistingServer: false, timeout: 60000, env: { PAYPAL_CLIENT_ID: '', PAYPAL_CLIENT_SECRET: '', ALLOW_SANDBOX_DRAFTS: '0' } },
     { command: 'node test/sandbox-harness.mjs', url: 'http://127.0.0.1:4319/api/health', reuseExistingServer: false, timeout: 60000 },
+    { command: 'node test/agent-harness.mjs', url: 'http://127.0.0.1:4321/api/health', reuseExistingServer: false, timeout: 60000 },
   ],
 });

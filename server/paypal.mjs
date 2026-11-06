@@ -60,4 +60,23 @@ export class PayPalSandboxClient {
     if (typeof id !== 'string' || !/^INV[0-9A-Z-]{4,100}$/.test(id) || (data.status && data.status !== 'DRAFT')) throw new Error('Sandbox draft outcome needs checking in the sandbox dashboard.');
     return { id, status: 'DRAFT', environment: 'sandbox', sent: false, total: data.amount?.value, currency: data.amount?.currency_code };
   }
+  // Reads a draft back so the operator can compare what PayPal stored with what was reviewed. It never changes the draft.
+  async getInvoice(id) {
+    if (typeof id !== 'string' || !/^INV[0-9A-Z-]{4,100}$/.test(id)) throw new Error('Invalid invoice reference.');
+    let token;
+    try { token = await this.#accessToken(); } catch { throw new Error('Sandbox sign-in failed, so the draft could not be read back. The draft itself is unchanged.'); }
+    let response;
+    try {
+      response = await this.#fetch(`${SANDBOX}/v2/invoicing/invoices/${encodeURIComponent(id)}`, { method: 'GET', headers: { Authorization: `Bearer ${token}` }, redirect: 'error', signal: AbortSignal.timeout(15000) });
+    } catch { throw new Error('PayPal did not answer the readback. The draft itself is unchanged.'); }
+    if (response.status === 401) { this.#token = null; this.#expiresAt = 0; }
+    if (!response.ok) throw new Error(`PayPal returned ${response.status} for the readback. The draft itself is unchanged.`);
+    let data;
+    try { data = await response.json(); } catch { throw new Error('PayPal\'s readback could not be read. The draft itself is unchanged.'); }
+    const text = value => typeof value === 'string' ? value.slice(0, 200) : '';
+    return {
+      id: text(data.id), status: text(data.status), currency: text(data.amount?.currency_code || data.detail?.currency_code), total: text(data.amount?.value),
+      items: (Array.isArray(data.items) ? data.items.slice(0, 100) : []).map(item => ({ name: text(item?.name), quantity: text(String(item?.quantity ?? '')), unitAmount: text(item?.unit_amount?.value), currency: text(item?.unit_amount?.currency_code), description: text(item?.description) })),
+    };
+  }
 }

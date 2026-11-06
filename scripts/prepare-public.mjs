@@ -17,7 +17,7 @@ export function isPublicPath(path) {
   if (path.includes('\\') || path.split('/').some(part => !part || part === '.' || part === '..')) return false;
   return files.includes(path) || /^(?:src|server)\/(?:[\w-]+\/)*[\w.-]+\.(?:mjs|js|json|css)$/.test(path)
     || /^test\/[\w.-]+\.test\.mjs$/.test(path) || /^test\/ui\/[\w.-]+\.spec\.js$/.test(path)
-    || path === 'test/sandbox-harness.mjs';
+    || path === 'test/sandbox-harness.mjs' || path === 'test/agent-harness.mjs' || /^test\/fixtures\/[\w.-]+\.json$/.test(path);
 }
 
 // A bounded pre-publication check, not a proof that every kind of private data is absent.
